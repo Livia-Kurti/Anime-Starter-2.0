@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Anime Starter — Home</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="home">
+  <header class="site-header">
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="HomePage.html">Home</a>
+      <a href="generator.html">Generator</a>
+      <a href="MyList.html">Generator</a>
+    </div>
+    <a class="logo" href="#">Anime Starter</a>
+    <button class="menu-btn" aria-label="menu" onclick="openNav()">☰</button>
+  </header>
+
+  <section class="hero">
+    <h1>Welcome to Anime Starter!</h1>
+    <p class="sub">This site generates beginner and family friendly anime lists for those interested in starting their anime journey. Hit the Start button below to see your recommendations.</p>
+    <div class="hero-actions">
+      <a class="btn primary" id="startBtn" href="generator.html">Start</a>
+    </div>
+  </section>
+
+  <main>
+    <section class="ticker-section">
+      <h3 class="section-title">Currently Airing</h3>
+      <div class="ticker-wrap">
+        <div class="ticker" id="ticker"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Anime Starter — Generator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="generator">
+  <header class="site-header">
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="HomePage.html">Home</a>
+      <a href="generator.html">Generator</a>
+      <a href="MyList.html">My List</a>
+      <a href="login.html">Login/Signup</a>
+    </div>
+    <a class="logo" href="#">Anime Starter</a>
+    <button class="menu-btn" aria-label="menu" onclick="openNav()">☰</button>
+  </header>
+
+  <main style="padding:60px 18px; text-align:center">
+    <h1>Log in</h1>
+    <form id="loginForm" style="max-width:420px;margin:28px auto;text-align:center">
+       <label>Username <input name="username" required /></label><p></p>
+      <label>Password <input name="password" type="password" required /></label>
+      <div style="margin-top:14px">
+        <button type="submit" class="btn primary">Log in</button>
+      </div>
+      <p style="margin-top:12px">Don't have an account? <a href="signup.html">Sign up</a></p>
+      <div id="loginStatus" class="status"></div>
+    </form>
+  </main>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -139,3 +139,44 @@ select#genreSelect{padding:12px 14px;border-radius:12px;border:2px solid rgba(12
   color: #222222;
 }
 
+/* Add this to your styles.css */
+
+.card .actions {
+    /* Ensures the action area is at the bottom */
+    margin-top: 10px; 
+}
+
+.status-select {
+    /* Make the dropdown look like a large button */
+    width: 100%;
+    padding: 10px 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    
+    /* Blue background to mimic the "Add to List" button */
+    background-color: #7d00b8; 
+    color: white;
+    appearance: none; /* Removes default OS styling for a cleaner look */
+    
+    /* Basic hover/focus styles */
+    transition: background-color 0.15s ease;
+}
+
+.status-select:hover {
+    background-color: #0038a0;
+}
+
+.card .overlay{
+    /* ... other styles ... */
+    opacity:0; 
+    transform:translateY(6px); 
+    transition: .18s ease;
+}
+.card:hover .overlay{
+    opacity:1; 
+    transform:none;
+}

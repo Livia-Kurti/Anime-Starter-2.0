@@ -11,23 +11,28 @@
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <a href="index.html">Home</a>
-      <a href="generator.html">Generator</a>
       <a href="MyList.html">My List</a>
     </div>
     <a class="logo" href="#">Anime Starter</a>
     <button class="menu-btn" aria-label="menu" onclick="openNav()">☰</button>
   </header>
 
-  <main class="grid-section">
-    <h3 class="section-title">My List</h3>
-    <select id="statusFilter">
-      <option value="">All Status</option>
-      <option>Want to Watch</option>
-      <option>Watched</option>
-      <option>Dropped</option>
-      <option>Not Interested</option>
-    </select>
-    <div id="mylistGrid" class="grid"></div>
+<section class="hero small-hero">
+ <h1>My List</h1>
+ <p class="sub">Here are the anime you marked on the main page</p><p></p>
+
+<select id="genreSelect" aria-label="Genre filter">
+        <option value="">All Status</option>
+      </select>
+      <button id="regenerateBtn" class="btn primary">Regenerate</button>
+
+</section>
+
+    <main>
+    <section class="grid-section" id="resultsArea">
+      <div class="status" id="statusMessage"></div>
+      <div class="grid" id="grid"></div>
+    </section>
   </main>
 
 
@@ -35,5 +40,4 @@
   <script src="script.js"></script>
 </body>
 </html>
-
 

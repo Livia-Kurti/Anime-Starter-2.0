@@ -154,6 +154,18 @@ function renderGridCard(anime){
   const img = anime.image || "";
   const summary = (anime.synopsis || "").slice(0,140);
   const genresHtml = (anime.genres || []).slice(0,3).map(g => `<span class="genre-pill">${escapeHtml(g)}</span>`).join("");
+  
+  // Create HTML options for the dropdown
+  const dropdownOptions = [
+      `<option value="" disabled selected>+ Add to List</option>`,
+      `<option value="Want to Watch">Want to Watch</option>`,
+      `<option value="Watching">Watching</option>`,
+      `<option value="Completed">Completed</option>`,
+      `<option value="Paused">Paused</option>`,
+      `<option value="Dropped">Dropped</option>`,
+      `<option value="Not Interested">Not Interested</option>`,
+  ].join('');
+
   return `
     <div class="card">
       <img src="${escapeAttr(img)}" alt="${escapeAttr(anime.title)}" loading="lazy" onerror="this.style.opacity=.12">
@@ -161,9 +173,21 @@ function renderGridCard(anime){
         <div class="title">${escapeHtml(anime.title)}</div>
         <div class="meta">${escapeHtml(summary)}</div>
         <div class="genres">${genresHtml}</div>
+        
+        <div class="actions">
+            <select class="status-select" onchange='closeDropdown(this); addToMyList(${JSON.stringify(anime)}, this.value)'>
+                ${dropdownOptions}
+            </select>
+        </div>
+
       </div>
     </div>
   `;
+}
+
+function closeDropdown(selectElement) {
+    // This removes focus from the dropdown, forcing it to close immediately.
+    selectElement.blur(); 
 }
 
 /* -------------------- UTIL -------------------- */
@@ -174,7 +198,6 @@ function escapeHtml(str = "") {
 }
 function escapeAttr(s){ return escapeHtml(s) }
 
-// Sidenav functions (assumed to be correct)
-function openNav(){document.getElementById("mySidenav").style.width="250px";}
 
+function openNav(){document.getElementById("mySidenav").style.width="250px";}
 function closeNav(){document.getElementById("mySidenav").style.width="0";}

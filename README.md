@@ -1,2 +1,2 @@
 # Anime-Starter-2.0
-continuation of Anime Starter
+Continuation of the Anime Starter school project, now incorporating MongoDB and CRUD functionality.
